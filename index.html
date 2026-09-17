@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VINN SHOP x JUSTIN APK</title>
+<title>VINN SHOP x JUSTIN APK - FIXED</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{--neon:#00fff5;--neon2:#ff00ff;--neon3:#9d00ff;--bg:#050507}
@@ -13,36 +13,53 @@ h1,h2,h3{font-family:'Orbitron'}
 .glitch{text-shadow:0 0 10px var(--neon),0 0 20px var(--neon2)}
 .neon-btn{border:2px solid var(--neon);color:var(--neon);padding:12px 26px;border-radius:30px;font-family:'Orbitron';background:transparent;box-shadow:0 0 15px var(--neon);cursor:pointer}
 .neon-btn2{border:2px solid var(--neon3);color:var(--neon3);padding:12px 26px;border-radius:30px;font-family:'Orbitron';background:transparent;box-shadow:0 0 15px var(--neon3);cursor:pointer}
-.card{background:linear-gradient(145deg,rgba(20,20,30,.9),rgba(10,10,15,.9));border:1px solid rgba(0,255,245,.2);border-radius:18px;padding:22px;transition:.4s}
-.card:hover{transform:translateY(-5px)}
+.card{background:rgba(20,20,30,.9);border:1px solid rgba(0,255,245,.2);border-radius:18px;padding:22px}
 .justin-card{border:1px solid var(--neon3);box-shadow:0 0 15px rgba(157,0,255,.2)}
 .trial-card{border:1px solid #00ff88;box-shadow:0 0 15px rgba(0,255,136,.2)}
 .section{padding:80px 5%}
 .tag{display:inline-block;border:1px solid var(--neon2);color:var(--neon2);padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:2px}
-.qris-box{background:#fff;color:#000;border-radius:22px;padding:25px;max-width:420px;margin:0 auto;border:3px solid var(--neon);box-shadow:0 0 40px rgba(0,255,245,.6)}
+.qris-box{background:#fff;color:#000;border-radius:22px;padding:25px;max-width:420px;margin:0 auto;border:3px solid var(--neon)}
 .qris-box img{width:100%;border-radius:14px}
-#loading{position:fixed;top:0;left:0;width:100%;height:100%;background:#050507;z-index:99999;display:flex;align-items:center;justify-content:center;transition:opacity .8s}
-#loading.hide{opacity:0;visibility:hidden}
-.loader-logo{width:90px;height:90px;background:#fff;border-radius:50%;padding:10px;animation:logoSpin 2s infinite ease-in-out;box-shadow:0 0 30px #9d00ff}
-@keyframes logoSpin{0%{transform:rotateY(0)}50%{transform:rotateY(180deg) scale(1.1)}100%{transform:rotateY(360deg)}}
+/* LOADING FIX - PASTI MUNCUL */
+#loading{position:fixed;top:0;left:0;width:100%;height:100%;background:#050507;z-index:99999;display:flex;align-items:center;justify-content:center}
+#loading.hide{opacity:0;visibility:hidden;transition:opacity .8s}
+.loader-logo{width:100px;height:100px;background:#fff;border-radius:50%;padding:10px;animation:logoSpin 2s infinite linear;box-shadow:0 0 30px #9d00ff,0 0 60px #00fff5}
+@keyframes logoSpin{0%{transform:rotateY(0) scale(1)}50%{transform:rotateY(180deg) scale(1.1)}100%{transform:rotateY(360deg) scale(1)}}
 .loader-bar{width:200px;height:4px;background:rgba(255,255,255,.1);border-radius:10px;margin:20px auto 0;overflow:hidden}
-.loader-progress{height:100%;width:0%;background:linear-gradient(90deg,#00fff5,#9d00ff);animation:load 2.8s forwards}
-@keyframes load{0%{width:0%}30%{width:40%}70%{width:85%}100%{width:100%}}
+.loader-progress{height:100%;width:0%;background:linear-gradient(90deg,#00fff5,#9d00ff);animation:load 3s forwards}
+@keyframes load{0%{width:0%}100%{width:100%}}
 </style>
 </head>
 <body>
-<div id="loading"><div style="text-align:center"><img src="justin-official-logo.jpg" class="loader-logo"><h1 class="glitch" style="font-size:32px;margin-top:20px">VINN SHOP</h1><p style="color:#9d00ff;letter-spacing:4px;font-size:12px;font-family:'Orbitron'">x JUSTIN APK</p><div class="loader-bar"><div class="loader-progress"></div></div><p style="font-family:'Orbitron';font-size:10px;letter-spacing:3px;opacity:.6;margin-top:12px">LOADING...</p></div></div>
 
-<nav style="position:fixed;top:0;width:100%;background:rgba(5,5,7,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,255,245,.2);display:flex;justify-content:space-between;padding:14px 5%;z-index:99">
+<!-- LOADING - INI YANG KEMARIN GAK MUNCUL, SEKARANG AKU FIX -->
+<div id="loading">
+<div style="text-align:center">
+<img src="justin-official-logo.jpg" class="loader-logo" onerror="this.src='https://via.placeholder.com/100x100/ffffff/9d00ff?text=J'">
+<h1 class="glitch" style="font-size:32px;margin-top:20px">VINN SHOP</h1>
+<p style="color:#9d00ff;letter-spacing:4px;font-size:12px;font-family:'Orbitron'">x JUSTIN APK</p>
+<div class="loader-bar"><div class="loader-progress"></div></div>
+<p style="font-family:'Orbitron';font-size:10px;letter-spacing:3px;opacity:.6;margin-top:12px">LOADING SYSTEM... 3 DETIK</p>
+</div>
+</div>
+
+<nav style="position:fixed;top:0;width:100%;background:rgba(5,5,7,.92);border-bottom:1px solid rgba(0,255,245,.2);display:flex;justify-content:space-between;padding:14px 5%;z-index:99">
 <div style="color:#00fff5;font-family:'Orbitron';font-weight:800">VINN SHOP x JUSTIN</div>
-<div style="display:flex;gap:14px"><a href="#produk" style="color:#fff;text-decoration:none;font-size:11px">PRODUK</a><a href="#justin" style="color:#9d00ff;text-decoration:none;font-size:11px">JUSTIN APK</a><a href="#trial" style="color:#00ff88;text-decoration:none;font-size:11px">TRIAL</a><a href="#qris" style="color:#fff;text-decoration:none;font-size:11px">QRIS</a></div>
+<div style="display:flex;gap:12px"><a href="#justin" style="color:#9d00ff;text-decoration:none;font-size:11px">JUSTIN APK</a><a href="#trial" style="color:#00ff88;text-decoration:none;font-size:11px">TRIAL</a><a href="#qris" style="color:#fff;text-decoration:none;font-size:11px">QRIS</a></div>
 </nav>
 
 <div style="min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 5% 60px">
-<div><div class="tag">VINN SHOP • JUSTIN APK • QRIS READY</div><h1 class="glitch" style="font-size:clamp(32px,7vw,68px);margin:18px 0;line-height:1.1">VINN SHOP<br><span style="color:#9d00ff;font-size:.7em">x JUSTIN APK</span></h1><p style="opacity:.7;max-width:600px;margin:0 auto 30px;font-size:13px">Panel Pterodactyl + Justin Apk + Trial Akses Murah</p><a href="#justin"><button class="neon-btn2">🔥 LIHAT JUSTIN APK</button></a><div style="margin-top:30px"><img src="justin-official-logo.jpg" style="width:110px;height:110px;background:#fff;border-radius:50%;padding:10px;box-shadow:0 0 25px #9d00ff"></div></div>
+<div>
+<div class="tag">VINN SHOP • JUSTIN APK • QRIS READY</div>
+<h1 class="glitch" style="font-size:clamp(32px,7vw,68px);margin:18px 0">VINN SHOP<br><span style="color:#9d00ff;font-size:.7em">x JUSTIN APK</span></h1>
+<p style="opacity:.7;max-width:600px;margin:0 auto 30px;font-size:13px">Panel Pterodactyl + Justin Apk + Trial Akses Murah</p>
+<a href="#justin"><button class="neon-btn2">🔥 LIHAT JUSTIN APK</button></a>
+<div style="margin-top:30px">
+<img src="justin-official-logo.jpg" style="width:110px;height:110px;object-fit:contain;background:#fff;border-radius:50%;padding:10px;box-shadow:0 0 25px #9d00ff" onerror="this.src='https://via.placeholder.com/110x110/ffffff/9d00ff?text=JUSTIN'">
+</div>
+</div>
 </div>
 
-<!-- PANEL -->
 <section id="produk" class="section" style="padding-top:40px">
 <div style="text-align:center;margin-bottom:30px"><div class="tag">PRODUK VINN SHOP</div><h2 style="font-size:28px;margin:14px 0">PANEL PTERODACTYL</h2></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:500px;margin:0 auto">
@@ -50,48 +67,49 @@ h1,h2,h3{font-family:'Orbitron'}
 </div>
 </section>
 
-<!-- JUSTIN APK - UDAH DIURUT HARGA TERKECIL KE BESAR -->
 <section id="justin" class="section" style="background:linear-gradient(180deg,rgba(157,0,255,.08),transparent)">
 <div style="text-align:center;margin-bottom:35px">
 <div class="tag" style="border-color:#9d00ff;color:#9d00ff">PRODUK UTAMA</div>
 <h2 style="font-size:clamp(28px,6vw,44px);margin:14px 0;color:#9d00ff">JUSTIN APK 💜</h2>
 <p style="opacity:.6;font-size:12px">Harga urut termurah → termahal</p>
-<img src="justin-official-logo.jpg" style="width:80px;height:80px;background:#fff;border-radius:50%;padding:8px;margin-top:12px;box-shadow:0 0 20px #9d00ff">
+<img src="justin-official-logo.jpg" style="width:80px;height:80px;object-fit:contain;background:#fff;border-radius:50%;padding:8px;margin-top:12px;box-shadow:0 0 20px #9d00ff" onerror="this.style.display='none'">
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;max-width:900px;margin:0 auto">
-<!-- 1. 3K -->
-<div class="card justin-card"><div style="display:flex;justify-content:space-between"><h3>🐞 Jasa Bug / Nomor</h3><span style="background:#00fff5;color:#000;padding:3px 8px;border-radius:12px;font-size:9px">TERMURAH</span></div><p style="opacity:.6;font-size:12px;margin:10px 0">Jasa bug per nomor, work semua WA</p><b style="color:#9d00ff;font-size:22px">Rp 3K</b><a href="https://wa.me/6285855823336?text=Mau+Jasa+Bug+3K+per+nomor" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 3K →</button></a></div>
-<!-- 2. 35K -->
-<div class="card justin-card"><h3>💎 VIP 1 Bulan</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Akses VIP Justin APK full 1 bulan</p><b style="color:#9d00ff;font-size:22px">Rp 35K</b><a href="https://wa.me/6285855823336?text=Mau+VIP+1+Bulan+35K" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 35K →</button></a></div>
-<!-- 3. 50K -->
-<div class="card justin-card"><h3>⚡ Full Up</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Full up level cepat + bonus</p><b style="color:#9d00ff;font-size:22px">Rp 50K</b><a href="https://wa.me/6285855823336?text=Mau+Full+Up+50K" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 50K →</button></a></div>
-<!-- 4. 70K -->
-<div class="card justin-card"><div style="display:flex;justify-content:space-between"><h3>👑 Admin</h3><span style="background:var(--neon3);color:#fff;padding:3px 8px;border-radius:12px;font-size:9px">PREMIUM</span></div><p style="opacity:.6;font-size:12px;margin:10px 0">Level Admin Justin APK akses full</p><b style="color:#9d00ff;font-size:22px">Rp 70K</b><a href="https://wa.me/6285855823336?text=Mau+Admin+70K" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 70K →</button></a></div>
+<div class="card justin-card"><h3>🐞 Jasa Bug / Nomor</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Jasa bug per nomor</p><b style="color:#9d00ff;font-size:22px">Rp 3K</b><a href="https://wa.me/6285855823336?text=Mau+Jasa+Bug+3K" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 3K →</button></a></div>
+<div class="card justin-card"><h3>💎 VIP 1 Bulan</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Akses VIP 1 bulan</p><b style="color:#9d00ff;font-size:22px">Rp 35K</b><a href="https://wa.me/6285855823336?text=Mau+VIP+35K" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 35K →</button></a></div>
+<div class="card justin-card"><h3>⚡ Full Up</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Full up level cepat</p><b style="color:#9d00ff;font-size:22px">Rp 50K</b><a href="https://wa.me/6285855823336?text=Mau+Full+Up+50K" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 50K →</button></a></div>
+<div class="card justin-card"><h3>👑 Admin</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Level Admin akses full</p><b style="color:#9d00ff;font-size:22px">Rp 70K</b><a href="https://wa.me/6285855823336?text=Mau+Admin+70K" target="_blank"><button class="neon-btn2" style="width:100%;margin-top:12px;padding:9px;font-size:11px">BELI 70K →</button></a></div>
 </div>
 </section>
 
-<!-- TRIAL APK JUSTIN - BARU -->
 <section id="trial" class="section" style="background:rgba(0,255,136,.05)">
-<div style="text-align:center;margin-bottom:35px">
-<div class="tag" style="border-color:#00ff88;color:#00ff88;box-shadow:0 0 10px #00ff88">PRODUK TRIAL</div>
-<h2 style="font-size:clamp(24px,5vw,36px);margin:14px 0;color:#00ff88">TRIAL APK JUSTIN 🧪</h2>
-<p style="opacity:.6;font-size:12px">Coba dulu baru langganan full</p>
-</div>
+<div style="text-align:center;margin-bottom:35px"><div class="tag" style="border-color:#00ff88;color:#00ff88">PRODUK TRIAL</div><h2 style="font-size:30px;margin:14px 0;color:#00ff88">TRIAL APK JUSTIN 🧪</h2></div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:800px;margin:0 auto">
-<div class="card trial-card"><h3>🧪 Akses 5 Hari</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Trial Justin APK 5 hari full fitur</p><b style="color:#00ff88;font-size:22px">Rp 5K</b><a href="https://wa.me/6285855823336?text=Mau+Trial+5+Hari+5K" target="_blank"><button style="width:100%;margin-top:12px;padding:9px;font-size:11px;border:2px solid #00ff88;color:#00ff88;background:transparent;border-radius:30px;font-family:'Orbitron';box-shadow:0 0 10px #00ff88;cursor:pointer">BELI 5K →</button></a></div>
-<div class="card trial-card"><h3>🧪 Akses 10 Hari</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Trial Justin APK 10 hari hemat</p><b style="color:#00ff88;font-size:22px">Rp 10K</b><a href="https://wa.me/6285855823336?text=Mau+Trial+10+Hari+10K" target="_blank"><button style="width:100%;margin-top:12px;padding:9px;font-size:11px;border:2px solid #00ff88;color:#00ff88;background:transparent;border-radius:30px;font-family:'Orbitron';box-shadow:0 0 10px #00ff88;cursor:pointer">BELI 10K →</button></a></div>
-<div class="card trial-card"><h3>🧪 Akses 15 Hari</h3><p style="opacity:.6;font-size:12px;margin:10px 0">Trial Justin APK 15 hari paling laris</p><b style="color:#00ff88;font-size:22px">Rp 15K</b><a href="https://wa.me/6285855823336?text=Mau+Trial+15+Hari+15K" target="_blank"><button style="width:100%;margin-top:12px;padding:9px;font-size:11px;border:2px solid #00ff88;color:#00ff88;background:transparent;border-radius:30px;font-family:'Orbitron';box-shadow:0 0 10px #00ff88;cursor:pointer">BELI 15K →</button></a></div>
+<div class="card trial-card"><h3>🧪 Akses 5 Hari</h3><b style="color:#00ff88;font-size:22px">Rp 5K</b><a href="https://wa.me/6285855823336?text=Mau+Trial+5+Hari+5K" target="_blank"><button style="width:100%;margin-top:12px;padding:9px;font-size:11px;border:2px solid #00ff88;color:#00ff88;background:transparent;border-radius:30px;font-family:'Orbitron'">BELI 5K →</button></a></div>
+<div class="card trial-card"><h3>🧪 Akses 10 Hari</h3><b style="color:#00ff88;font-size:22px">Rp 10K</b><a href="https://wa.me/6285855823336?text=Mau+Trial+10+Hari+10K" target="_blank"><button style="width:100%;margin-top:12px;padding:9px;font-size:11px;border:2px solid #00ff88;color:#00ff88;background:transparent;border-radius:30px;font-family:'Orbitron'">BELI 10K →</button></a></div>
+<div class="card trial-card"><h3>🧪 Akses 15 Hari</h3><b style="color:#00ff88;font-size:22px">Rp 15K</b><a href="https://wa.me/6285855823336?text=Mau+Trial+15+Hari+15K" target="_blank"><button style="width:100%;margin-top:12px;padding:9px;font-size:11px;border:2px solid #00ff88;color:#00ff88;background:transparent;border-radius:30px;font-family:'Orbitron'">BELI 15K →</button></a></div>
 </div>
 </section>
 
-<!-- QRIS -->
 <section id="qris" class="section" style="text-align:center;background:rgba(0,255,245,.05)">
 <div class="tag">PEMBAYARAN</div><h2 style="font-size:30px;margin:14px 0">BAYAR VIA QRIS</h2>
-<div class="qris-box"><img src="qris-vinn-shop.jpg" alt="QRIS"><h3 style="margin-top:10px;color:#000">VINN SHOP</h3><p style="font-size:11px;color:#555">NMID : ID1025386842971 • A01</p><p style="font-size:10px;background:#000;color:#00fff5;display:inline-block;padding:5px 10px;border-radius:15px;margin-top:6px;font-family:'Orbitron'">SATU QRIS UNTUK SEMUA</p><div style="margin-top:14px"><a href="https://wa.me/6285855823336?text=Sudah+bayar+QRIS" target="_blank"><button class="neon-btn" style="font-size:11px;padding:9px 16px;background:#fff;color:#000;border-color:#000;box-shadow:none">✅ KIRIM BUKTI</button></a></div></div>
+<div class="qris-box">
+<img src="qris-vinn-shop.jpg" alt="QRIS VINN SHOP" onerror="this.src='https://via.placeholder.com/400x400/ffffff/000000?text=QRIS+VINN+SHOP+ID1025386842971'">
+<h3 style="margin-top:10px;color:#000">VINN SHOP</h3><p style="font-size:11px;color:#555">NMID : ID1025386842971 • A01</p>
+<div style="margin-top:14px"><a href="https://wa.me/6285855823336?text=Sudah+bayar+QRIS" target="_blank"><button class="neon-btn" style="font-size:11px;padding:9px 16px;background:#fff;color:#000;border-color:#000;box-shadow:none">✅ KIRIM BUKTI</button></a></div>
+</div>
 </section>
 
-<section style="text-align:center;padding:40px 5%"><p style="font-size:11px;opacity:.4">© 2026 VINN SHOP x JUSTIN APK • WA 6285855823336</p></section>
 <a href="https://wa.me/6285855823336" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;text-decoration:none;box-shadow:0 0 20px #25D366;z-index:99">💬</a>
-<script>window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loading').classList.add('hide')},2600)})</script>
+
+<script>
+// LOADING FIX - MUNCUL 3 DETIK WAJIB
+window.addEventListener('load',()=>{
+  console.log('loading start');
+  setTimeout(()=>{
+    document.getElementById('loading').classList.add('hide');
+  },3000);
+});
+</script>
 </body>
 </html>
