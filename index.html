@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VINZ SHOP x JUSTIN - V13 ULTIMATE ANIME</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{background:#04000e;color:#fff;font-family:Poppins,sans-serif;overflow-x:hidden;overflow:hidden}
+body.loaded{overflow:auto}
+/* === LOADING KEREN TAMBAHAN - TIDAK MERUBAH YANG LAIN === */
+#loading{position:fixed;inset:0;z-index:99999;background:#04000e;display:flex;align-items:center;justify-content:center;transition:opacity.8s,visibility.8s}
+#loading.hide{opacity:0;visibility:hidden;pointer-events:none}
+.bg-load{position:absolute;inset:0;background:url('bg-anime.jpg') center/cover;filter:brightness(.3) blur(3px) hue-rotate(250deg)}
+.load-box{position:relative;z-index:2;text-align:center;width:90%;max-width:360px}
+.logo-load{width:100px;height:100px;margin:0 auto 14px;border-radius:50%;padding:3px;background:conic-gradient(#ff00ff,#00fff5,#ff00ff);animation:spin 1.1s linear infinite;box-shadow:0 0 30px #ff00ff}
+.logo-inner{width:100%;height:100%;border-radius:50%;background:#060014;display:flex;align-items:center;justify-content:center;font-family:Orbitron;font-weight:800;font-size:40px;text-shadow:0 0 12px #00fff5}
+@keyframes spin{to{transform:rotate(360deg)}}
+.load-title{font-family:Orbitron;font-size:26px;font-style:italic;transform:skewX(-5deg);text-shadow:0 0 15px #ff00ff}.load-title span{color:#00fff5;text-shadow:0 0 15px #00fff5}
+.load-sub{font-size:9px;letter-spacing:3px;opacity:.7;margin-top:4px;font-family:Orbitron}
+.progress-wrap{margin-top:20px;background:rgba(255,255,255,.12);border-radius:20px;height:8px;overflow:hidden;border:1px solid rgba(122,0,255,.4)}
+.progress-bar{height:100%;width:0%;background:linear-gradient(90deg,#ff00ff,#00fff5);box-shadow:0 0 12px #00fff5;transition:width.15s}
+.load-text{font-size:10px;margin-top:10px;opacity:.8;font-family:Orbitron;letter-spacing:1px}
+
+.bg{position:fixed;inset:0;z-index:-4;background:url('bg-anime.jpg') center/cover;filter:brightness(.55) saturate(1.4) hue-rotate(250deg);animation:zoom 45s ease-in-out infinite alternate}
+@keyframes zoom{0%{transform:scale(1)}100%{transform:scale(1.25) translate(-30px,-15px)}}
+.boy{position:fixed;right:-3%;bottom:0;width:52%;max-width:640px;z-index:-3;opacity:.92;filter:drop-shadow(0 0 35px #7a00ff);animation:float 6s ease-in-out infinite;transition:transform.25s ease-out;pointer-events:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+canvas{position:fixed;inset:0;pointer-events:none} #rain{z-index:-2} #sakura{z-index:-1} #glow{z-index:-2}
+.light{position:fixed;inset:0;z-index:-1;pointer-events:none;transition:.12s}.light.flash{background:rgba(200,220,255,.22)}
+nav{position:fixed;top:0;width:100%;z-index:99;display:flex;justify-content:space-between;padding:12px 3%;background:rgba(6,0,25,.88);backdrop-filter:blur(12px);border-bottom:2px solid #7a00ff;box-shadow:0 0 22px #7a00ff}
+.logo{font-family:Orbitron;font-weight:800;font-size:22px;font-style:italic;text-shadow:0 0 14px #ff00ff}.logo span{color:#00fff5;text-shadow:0 0 14px #00fff5}
+.wrap{padding:12px 2%;position:relative;z-index:2}
+.box{border-radius:20px;padding:16px;margin-bottom:18px;background:rgba(12,6,32,.84);backdrop-filter:blur(8px);border:1.8px solid #7a00ff;box-shadow:0 0 28px rgba(122,0,255,.5),inset 0 0 25px rgba(0,0,0,.7);position:relative;overflow:hidden}
+.box::before{content:'';position:absolute;inset:-1px;border-radius:20px;padding:1.8px;background:linear-gradient(120deg,#ff00ff,#00fff5,#ff00ff);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:hue 5s linear infinite}
+@keyframes hue{to{filter:hue-rotate(360deg)}}
+.box-panel{border-color:#00fff5;box-shadow:0 0 32px rgba(0,255,245,.6)}.box-trial{border-color:#00ff88;box-shadow:0 0 32px rgba(0,255,136,.6)}
+.head{display:flex;align-items:center;gap:12px;margin-bottom:14px;position:relative;z-index:1}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:10px} @media(max-width:900px){.grid6{grid-template-columns:repeat(3,1fr)}} @media(max-width:500px){.grid6{grid-template-columns:repeat(2,1fr)}}
+.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px} @media(max-width:500px){.grid5{grid-template-columns:repeat(2,1fr)}}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} @media(max-width:600px){.grid3{grid-template-columns:1fr}}
+.card{background:rgba(0,0,0,.58);border:1px solid #7a00ff;border-radius:14px;padding:14px 8px;text-align:center;transition:.35s;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.12),transparent);transform:rotate(25deg) translateX(-100%);transition:.6s}
+.card:hover::after{transform:rotate(25deg) translateX(100%)}
+.card:hover{transform:translateY(-7px) scale(1.06);box-shadow:0 0 26px #7a00ff}
+.pr{font-weight:800;font-size:14px;color:#ff4dff;text-shadow:0 0 12px #ff00ff}.pr-cyan{color:#00fff5;text-shadow:0 0 12px #00fff5}.pr-green{color:#00ff88;text-shadow:0 0 12px #00ff88}
+.bt{display:block;padding:7px;border-radius:22px;border:1px solid #b000ff;color:#fff;font-size:8px;text-decoration:none;font-family:Orbitron;background:rgba(0,0,0,.45);margin-top:10px;box-shadow:0 0 12px rgba(176,0,255,.5);transition:.25s}
+.bt:hover{background:#b000ff;transform:scale(1.08)}.bt-cyan{border-color:#00fff5}.bt-cyan:hover{background:#00fff5;color:#000}.bt-green{border-color:#00ff88}.bt-green:hover{background:#00ff88;color:#000}
+.bot{display:grid;grid-template-columns:1fr 1fr;gap:14px} @media(max-width:700px){.bot{grid-template-columns:1fr}}
+.qr-white{background:#fff;border-radius:14px;padding:10px;width:150px;box-shadow:0 0 18px #fff}.qr-white img{width:100%;border-radius:10px}
+.wa-btn{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:16px;border:1.8px solid #00ff88;background:rgba(0,255,136,.14);color:#fff;text-decoration:none;box-shadow:0 0 22px rgba(0,255,136,.6);margin-top:16px;animation:pulse 2s infinite} @keyframes pulse{0%,100%{box-shadow:0 0 22px rgba(0,255,136,.6)}50%{box-shadow:0 0 36px rgba(0,255,136,.95)}}
+</style>
+</head>
+<body>
+<!-- LOADING KEREN - HANYA INI YANG DITAMBAHKAN -->
+<div id="loading">
+<div class="bg-load"></div>
+<div class="load-box">
+<div class="logo-load"><div class="logo-inner">V</div></div>
+<h1 class="load-title">VINZ <span>SHOP</span></h1>
+<p class="load-sub">OFFICIAL • TOKYO NIGHT</p>
+<div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+<p class="load-text" id="loadText">LOADING 0%</p>
+</div>
+</div>
+
+<div class="bg"></div>
+<img class="boy" id="boy" src="boy-anime.webp" alt="anime">
+<canvas id="rain"></canvas><canvas id="sakura"></canvas><canvas id="glow"></canvas>
+<div class="light" id="light"></div>
+
+<nav><div class="logo">VINZ <span>SHOP</span></div><div style="font-family:Orbitron;font-size:10px"><a href="#justin" style="color:#aee0ff;text-decoration:none;margin-left:12px">JUSTIN</a><a href="#panel" style="color:#aee0ff;text-decoration:none;margin-left:12px">PANEL</a><a href="#qris" style="color:#aee0ff;text-decoration:none;margin-left:12px">QRIS</a></div></nav>
+
+<div style="min-height:82vh;display:flex;align-items:center;padding:95px 4% 20px;position:relative;z-index:2">
+<div><div style="display:inline-block;padding:7px 18px;border-radius:25px;background:linear-gradient(90deg,rgba(120,0,255,.6),rgba(0,255,245,.3));border:1px solid #8d00ff;font-size:10px;box-shadow:0 0 14px #8d00ff">✨ V13 ULTIMATE • TOKYO RAIN + SAKURA + BOY PARALLAX</div>
+<h1 style="font-family:Orbitron;font-size:clamp(44px,8vw,78px);line-height:.9;font-style:italic;transform:skewX(-5deg);margin:14px 0;text-shadow:0 0 18px #ff00ff">VINZ SHOP<br><span style="color:#00fff5;text-shadow:0 0 18px #00fff5">x JUSTIN</span></h1>
+<p style="font-size:12px;opacity:.85">Gerakin mouse mas! Boy masker ungu ngikutin kursor + hujan + sakura hidup 🔥</p>
+<a href="#justin" style="display:inline-block;margin-top:16px;padding:11px 28px;border-radius:30px;border:1.5px solid #8d00ff;background:linear-gradient(90deg,rgba(120,0,255,.6),rgba(0,255,245,.35));color:#fff;font:800 11px Orbitron;text-decoration:none;box-shadow:0 0 20px #8d00ff">LIHAT PRODUK ↓</a></div></div>
+
+<div class="wrap">
+<div id="justin" class="box"><div class="head"><span style="font-size:32px">🪪</span><h2 style="font-family:Orbitron">JUSTIN APK</h2><span style="margin-left:auto;font-family:Orbitron;font-weight:800;font-style:italic;transform:rotate(-12deg);font-size:22px;color:#d000ff;text-shadow:0 0 12px #d000ff">JUSTIN APK</span></div>
+<div class="grid6">
+<div class="card"><div style="font-size:24px">🐞</div><div style="font-size:10px">Jasa Bug nomor</div><div class="pr">Rp 3K</div><a class="bt" href="https://wa.me/6285855823336?text=Mau+Bug+3K">BELI →</a></div>
+<div class="card"><div style="font-size:24px">💎</div><div style="font-size:10px">VIP 1 Bulan</div><div class="pr">Rp 35K</div><a class="bt" href="https://wa.me/6285855823336?text=Mau+VIP+35K">BELI →</a></div>
+<div class="card"><div style="font-size:24px">👑</div><div style="font-size:10px">VIP Permanen</div><div class="pr">Rp 45K</div><a class="bt" href="https://wa.me/6285855823336?text=Mau+VIP+Permanen">BELI →</a></div>
+<div class="card"><div style="font-size:24px">⚡</div><div style="font-size:10px">Full Up</div><div class="pr">Rp 50K</div><a class="bt" href="https://wa.me/6285855823336?text=Mau+FullUp">BELI →</a></div>
+<div class="card"><div style="font-size:24px">👥</div><div style="font-size:10px">Resseller</div><div class="pr">Rp 60K</div><a class="bt" href="https://wa.me/6285855823336?text=Mau+Resseller">BELI →</a></div>
+<div class="card"><div style="font-size:24px">👑</div><div style="font-size:10px">Admin</div><div class="pr">Rp 70K</div><a class="bt" href="https://wa.me/6285855823336?text=Mau+Admin">BELI →</a></div>
+</div></div>
+
+<div id="panel" class="box box-panel"><div class="head"><span style="font-size:32px;color:#00fff5">🗄️</span><h2 style="font-family:Orbitron;color:#00fff5">PANEL PRIVATE</h2><span style="margin-left:auto;font-family:Orbitron;font-weight:800;font-style:italic;transform:rotate(-12deg);font-size:22px;color:#00fff5;text-shadow:0 0 12px #00fff5">PANEL PRIVATE</span></div>
+<div class="grid5">
+<div class="card" style="border-color:#00fff5"><div>🔥</div><div style="font-size:10px">Panel Private 5GB-Unlimit</div><div class="pr pr-cyan">Rp 1K-10K</div><a class="bt bt-cyan" href="https://wa.me/6285855823336?text=Mau+Panel+Private">PESAN →</a></div>
+<div class="card" style="border-color:#00fff5"><div>💎</div><div style="font-size:10px">Reseller Panel</div><div class="pr pr-cyan">Rp 15K</div><a class="bt bt-cyan" href="https://wa.me/6285855823336?text=Mau+Reseller">PESAN →</a></div>
+<div class="card" style="border-color:#00fff5"><div>👑</div><div style="font-size:10px">Admin Panel</div><div class="pr pr-cyan">Rp 20K</div><a class="bt bt-cyan" href="https://wa.me/6285855823336?text=Mau+Admin">PESAN →</a></div>
+<div class="card" style="border-color:#00fff5"><div>⚡</div><div style="font-size:10px">Panter Panel</div><div class="pr pr-cyan">Rp 30K</div><a class="bt bt-cyan" href="https://wa.me/6285855823336?text=Mau+Panter">PESAN →</a></div>
+<div class="card" style="border-color:#00fff5"><div>🏆</div><div style="font-size:10px">Owner Panel</div><div class="pr pr-cyan">Rp 45K</div><a class="bt bt-cyan" href="https://wa.me/6285855823336?text=Mau+Owner">PESAN →</a></div>
+</div></div>
+
+<div class="box" style="border-color:#00ff88"><div class="head"><span style="font-size:32px;color:#00ff88">🧪</span><h2 style="font-family:Orbitron;color:#00ff88">TRIAL APK</h2><span style="margin-left:auto;font-family:Orbitron;font-weight:800;font-style:italic;transform:rotate(-12deg);font-size:22px;color:#00ff88">TRIAL</span></div>
+<div class="grid3">
+<div class="card" style="border-color:#00ff88"><div>🧪</div><div>Trial 5 Hari</div><div class="pr pr-green">Rp 5K</div><a class="bt bt-green" href="https://wa.me/6285855823336?text=Mau+Trial+5Hari">PESAN →</a></div>
+<div class="card" style="border-color:#00ff88"><div>🧪</div><div>Trial 10 Hari</div><div class="pr pr-green">Rp 10K</div><a class="bt bt-green" href="https://wa.me/6285855823336?text=Mau+Trial+10Hari">PESAN →</a></div>
+<div class="card" style="border-color:#00ff88"><div>🧪</div><div>Trial 15 Hari</div><div class="pr pr-green">Rp 15K</div><a class="bt bt-green" href="https://wa.me/6285855823336?text=Mau+Trial+15Hari">PESAN →</a></div>
+</div></div>
+
+<div class="bot">
+<div id="qris" class="box" style="border-color:#b000ff"><h3 style="font-family:Orbitron">BAYAR VIA QRIS</h3><div style="display:flex;gap:12px;margin-top:12px;align-items:center"><div class="qr-white"><img src="qris-vinn-shop.jpg"><p style="color:#000;font-size:7px;text-align:center;font-weight:800">VINN SHOP<br>ID1025386842971</p></div><p style="font-size:11px;opacity:.7">Background Tokyo + Boy original VINZ SHOP</p></div></div>
+<div id="kontak" class="box" style="border-color:#00ff88"><h3 style="font-family:Orbitron">HUBUNGI VINZ SHOP</h3><a class="wa-btn" href="https://wa.me/6285855823336"><span style="font-size:30px">💬</span><div><p style="font-size:10px">WHATSAPP</p><p style="font-family:Orbitron;font-weight:800;font-size:16px">6285855823336</p></div></a></div>
+</div>
+</div>
+
+<footer style="display:flex;justify-content:space-between;padding:14px 3%;background:rgba(0,0,0,.75);border-top:1px solid rgba(122,0,255,.5);font-size:10px;position:relative;z-index:2"><div>VINZ SHOP</div><div>© 2026 V13 ULTIMATE ANIME - Rain Sakura Boy Parallax</div></footer>
+
+<script>
+// === LOADING SCRIPT KEREN - HANYA TAMBAHAN ===
+let p=0;const bar=document.getElementById('bar'),txt=document.getElementById('loadText'),load=document.getElementById('loading');
+const msgs=["LOADING TOKYO NIGHT...","LOADING SAKURA...","LOADING NEON CITY...","LOADING VINZ SHOP...","READY!"];
+const itv=setInterval(()=>{p+=Math.random()*16+4;if(p>100)p=100;bar.style.width=p+'%';txt.textContent=msgs[Math.floor(p/25)]+' '+Math.floor(p)+'%';if(p>=100){clearInterval(itv);txt.textContent='WELCOME TO VINZ SHOP ✨';setTimeout(()=>{load.classList.add('hide');document.body.classList.add('loaded');document.getElementById('light').classList.add('flash');setTimeout(()=>document.getElementById('light').classList.remove('flash'),150)},700)}},110);
+
+function cv(id,n,init,draw){const c=document.getElementById(id),x=c.getContext('2d');let W,H,a=[];function R(){W=c.width=innerWidth;H=c.height=innerHeight}R();addEventListener('resize',R);for(let i=0;i<n;i++)a.push(init());(function loop(){x.clearRect(0,0,W,H);a.forEach((p,i)=>{draw(p,x,W,H);if(p.y>H+20){a[i]=init(true)}});requestAnimationFrame(loop)})()}
+cv('rain',220,()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight-100,s:Math.random()*2+1,sp:Math.random()*8+8}),(p,x)=>{x.strokeStyle='rgba(180,210,255,.45)';x.lineWidth=p.s*.6;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(p.x-1,p.y+p.s*6);x.stroke();p.y+=p.sp;p.x-=1});
+cv('sakura',45,t=>({x:Math.random()*innerWidth,y:t?-20:Math.random()*innerHeight,r:Math.random()*4+2,sp:Math.random()*1+.4,sw:Math.random()*1.5,rot:Math.random()*6,rs:Math.random()*.03+.01}),(p,x)=>{x.save();x.translate(p.x,p.y);x.rotate(p.rot+=p.rs);x.fillStyle='rgba(255,190,220,.8)';x.shadowBlur=10;x.shadowColor='#ff9ec0';x.beginPath();x.ellipse(0,0,p.r,p.r*1.5,0,0,Math.PI*2);x.fill();x.restore();p.y+=p.sp;p.x+=Math.sin(p.y/60)*p.sw});
+cv('glow',85,()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight*.6,r:Math.random()*2+0.5,tw:Math.random()*10,sp:Math.random()*.3+.1}),(p,x,W,H)=>{const o=Math.abs(Math.sin(Date.now()/1200+p.tw));x.fillStyle=`rgba(0,255,245,${o})`;x.shadowBlur=14;x.shadowColor='#00fff5';x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fill();p.y+=p.sp;if(p.y>H)p.y=0});
+setInterval(()=>{if(Math.random()<0.08){document.getElementById('light').classList.add('flash');setTimeout(()=>document.getElementById('light').classList.remove('flash'),120)}},380);
+const boy=document.getElementById('boy');addEventListener('mousemove',e=>{const mx=(e.clientX/innerWidth-.5)*28;const my=(e.clientY/innerHeight-.5)*18;boy.style.transform=`translate(${mx}px,${my}px)`});
+</script>
+</body>
+</html>
